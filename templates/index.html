@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Judul Halaman -->
+	<title>Insighful Muslim Bot</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<!-- Icon -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='logo.ico') }}">
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href={{ url_for('static', filename='/css/bootstrap.min.css') }} type="text/css">
+	<link rel="stylesheet" href={{ url_for('static', filename='/css/client_side.css') }}  type="text/css">
+	
+	<!-- JavaScript -->
+	<script src={{ url_for('static', filename='/js/jquery_3.6.0.min.js') }} ></script>
+	<script src={{ url_for('static', filename='/js/bootstrap_3.4.1.min.js') }} ></script>
+</head>
+
+<body id="halamanku" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+	<!-- Navigation Bar -->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			
+			<!-- Logo -->
+			<div class="navbar-header">
+				<img src={{ url_for('static', filename='/images/logo.ico') }}  alt="Insighful Logo" 
+				width="50" height="50" align="left">
+				<a class="navbar-brand" href="#halamanku">&#160; INSIGHFULL CHATBOT</a>
+			</div>
+			
+			<!-- Daftar Halaman -->
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#informasi">INFORMASI</a></li>
+					<li><a href="#aplikasi">APLIKASI</a></li>
+					<li><a href="#anggotaKelompok">ANGGOTA KELOMPOK</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!-- Bagian Halaman (Informasi) -->
+	<div id="informasi" class="container-fluid">
+		<br>
+		<br>
+		<div class="row">
+			<div class="col-sm-6">
+				<!-- Deskripsi Aplikasi -->
+				<h2>Web App</h2>
+				<h4>Insighful Muslim Bot</h4><br>
+				<p style="text-align: justify;text-justify: inter-word;">
+					 InsightfulMuslimBot hadir untuk memberikan bantuan dan panduan seputar cara berpakaian Muslim, khususnya untuk perempuan. Kami dapat memberikan pemahaman tentang prinsip-prinsip berpakaian dalam Islam, serta memberikan saran dan tips tentang cara memadukan busana, hijab, dan aksesoris lainnya secara sesuai dengan ajaran Islam.Kami juga dapat memberikan rekomendasi produk hijab yang relevan, termasuk harga dan gambar, untuk memenuhi kebutuhan pengguna. Meskipun kami tidak dapat menyediakan daftar produk secara real-time karena keterbatasan akses ke informasi terkini, kami dapat memberikan panduan umum tentang merek dan jenis-jenis hijab yang tersedia di pasaran. Namun, penting untuk diingat bahwa preferensi dan kebutuhan setiap individu dapat bervariasi, dan kami mendorong pengguna untuk mempertimbangkan nilai-nilai Islam, kenyamanan, dan gaya pribadi saat memilih busana dan aksesoris. 
+				</p>
+			    <br>
+
+				<!-- Tombol Mulai -->
+				<nav id="navgo" class="navbar" style="background-color:#ffffff;z-index: 0;">
+					<ul class="nav nav-pills">
+						<li class="nav-item">
+							<a class="btn btn-default btn-lg" href="#aplikasi" style="background-color:#28ace5">Mulai</a>
+						</li>
+					</ul>
+				</nav>
+
+			</div>
+			<div class="col-sm-6">
+				<br>
+				<br>
+				<!-- Gambar Deskripsi Aplikasi -->
+				<img src={{ url_for('static', filename='/images/z.jpg') }} width="653" ></img>
+			</div>
+		</div>
+	</div>
+
+	<!-- Bagian Halaman (Aplikasi) -->
+	<div id="aplikasi" data-bs-spy="scroll" data-bs-target="#navgo" data-bs-offset="0" class="scrollspy-example" tabindex="0">
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web App Insighful Muslim bot</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    .msger {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      overflow: hidden;
+      background-image: url('/static/images/b.jpg');
+      background-size: cover;
+    }
+
+    .msger-header {
+      background-color: #f2f2f2;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .msger-header-title {
+      font-weight: bold;
+    }
+
+    .msger-chat {
+      flex: 1;
+      overflow-y: scroll;
+      padding: 30px;
+    }
+
+    .msg {
+      display: flex;
+      margin-bottom: 30px;
+    }
+
+    .msg-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background-size: cover;
+    }
+
+    .msg-bubble {
+      max-width: 70%;
+      padding: 10px 15px;
+      border-radius: 15px;
+      background-color: #f2f2f2;
+    }
+
+    .msg-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 5px;
+    }
+
+    .msg-info-name {
+      font-weight: bold;
+    }
+
+    .msg-text {
+      word-wrap: break-word;
+    }
+
+    .msger-inputarea {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      background-color: #f2f2f2;
+    }
+
+    .msger-input {
+      flex: 1;
+      padding: 10px;
+      border: 2px solid #007bff;
+      border-radius: 25px;
+      font-size: 16px;
+      background-color: white;
+      outline: none;
+    }
+
+    .msger-send-btn {
+      margin-left: 10px;
+      border: none;
+      color: #fff;
+      border-radius: 50%;
+      background-color: #007bff;
+      cursor: pointer;
+      outline: none;
+      padding: 10px;
+    }
+  </style>
+
+  <br><br><br>
+</head>
+<body>
+  <section class="msger">
+    <header class="msger-header">
+      <div class="msger-header-title">
+        <i class="fas fa-bug"></i> Insighful Muslim Bot <i class="fas fa-bug"></i>
+      </div>
+    </header>
+    <main class="msger-chat">
+      <div class="msg left-msg">
+        <div class="msg-img" style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"></div>
+        <div class="msg-bubble">
+          <div class="msg-info">
+            <div class="msg-info-name">Insighful Bot</div>
+            <div class="msg-info-time"><?php echo date('H:i'); ?></div>
+          </div>
+          <div class="msg-text">
+            Hi, this is Mulimah ChatBot
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <form class="msger-inputarea">
+      <input type="text" class="msger-input" id="textInput" placeholder="ketikan pertanyaan kamu...">
+      <button type="submit" class="msger-send-btn">Kirim</button>
+    </form>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://use.fontawesome.com/releases/v5.0.13/js/all.js"></script>
+  <script>
+    const msgerForm = $(".msger-inputarea");
+    const msgerInput = $(".msger-input");
+    const msgerChat = $(".msger-chat");
+
+    // Icons made by Freepik from www.flaticon.com
+    const BOT_IMG = "https://image.flaticon.com/icons/svg/327/327779.svg";
+    const PERSON_IMG = "https://image.flaticon.com/icons/svg/145/145867.svg";
+    const BOT_NAME = "SembalunBot";
+    const PERSON_NAME = "Kamu";
+
+    msgerForm.on("submit", event => {
+      event.preventDefault();
+
+      const msgText = msgerInput.val();
+      if (!msgText) return;
+
+      appendMessage(PERSON_NAME, PERSON_IMG, "right", msgText);
+      msgerInput.val("");
+      botResponse(msgText);
+    });
+
+    function appendMessage(name, img, side, text) {
+      const msgHTML = `
+        <div class="msg ${side}-msg">
+          <div class="msg-img" style="background-image: url(${img})"></div>
+
+          <div class="msg-bubble">
+            <div class="msg-info">
+              <div class="msg-info-name">${name}</div>
+              <div class="msg-info-time">${formatDate(new Date())}</div>
+            </div>
+
+            <div class="msg-text">${text}</div>
+          </div>
+        </div>
+      `;
+
+      msgerChat.append(msgHTML);
+      msgerChat.scrollTop(msgerChat[0].scrollHeight);
+    }
+
+    function botResponse(rawText) {
+      $.get("/get", { msg: rawText }).done(function(data) {
+        const msgText = data;
+        appendMessage(BOT_NAME, BOT_IMG, "left", msgText);
+      });
+    }
+
+    function formatDate(date) {
+      const h = "0" + date.getHours();
+      const m = "0" + date.getMinutes();
+
+      return `${h.slice(-2)}:${m.slice(-2)}`;
+    }
+  </script>
+</body>
+
+</html>
+
+       
+    
+<br><br><br>
+	<!-- Bagian Halaman (Anggota Kelompok) -->
+<div id="anggotaKelompok" class="container-fluid text-center">
+  <h2>ANGGOTA KELOMPOK</h2>
+  <h4>Tim Deployment dan Tim NLP</h4>
+  <br>
+  <div class="row slideanim">
+      <div class="col-sm-6 col-md-3">
+          <img src="{{ url_for('static', filename='/images/Adi.jpeg') }}" width="290" />
+          <h4>Adi Gunawan</h4>
+          <p>Universitas Catur Insan Cendekia</p>
+      </div>
+      <div class="col-sm-6 col-md-3">
+          <img src="{{ url_for('static', filename='/images/Yoga.jpeg') }}" width="300" />
+          <h4>Yoga Adiansah</h4>
+          <p>STMIK Bandung</p>
+      </div>
+      <div class="col-sm-6 col-md-3">
+          <img src="{{ url_for('static', filename='/images/Selvi.jpeg') }}" width="220" />
+          <h4>Selvi Silviana</h4>
+          <p>STMIK IKMI Cirebon</p>
+      </div>
+      <div class="col-sm-6 col-md-3">
+          <img src="{{ url_for('static', filename='/images/Ziam.jpeg') }}" width="220" />
+          <h4>Ziam Agista Mutmainah</h4>
+          <p>Universitas Pendidikan Indonesia</p>
+      </div>
+  </div>
+</div>
+
+
+	        <!-- Footer -->
+       <footer style="display: flex; justify-content: center;">
+        <div class="col-sm-6">
+        <small>copyright &copy; 2023 - Kelompok4. all Right Reserved.</small>
+    </div>	
+  </footer>
+
+	
+  <!-- JavaScript untuk Animasi Scroll dan Prediksi Model -->
+	<script  src={{ url_for('static', filename='/js/client_side.js') }}></script>
+
+</body>
+</html>
